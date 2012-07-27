@@ -1,0 +1,42 @@
+NAME
+    feature::each_on_array - Emulate each(@array) on Perl < 5.12
+
+VERSION
+    version 0.01
+
+SYNOPSIS
+     # This can run on Perls older than 5.12 and have no effect on 5.12+
+     use feature::each_on_array;
+
+     my @a = (qw/a b c/);
+     while (my ($idx, $item) = each @a) {
+         ...
+     }
+
+DESCRIPTION
+    Beginning with 5.12, Perl supports each() on array. This module emulates
+    the support on older Perls.
+
+CAVEATS
+    Works on a per-package level, but does not work lexically yet.
+
+CREDITS
+    Thanks to Toby Inkster for writing the tie handler.
+
+SEE ALSO
+    This module originates from this discussion thread:
+    <http://www.perlmonks.org/?node_id=983878>
+
+    feature::key_on_array
+
+    feature::values_on_array
+
+AUTHOR
+    Steven Haryanto <stevenharyanto@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2012 by Steven Haryanto.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
